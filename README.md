@@ -48,16 +48,30 @@ Lambda:
 ```
 
 
+# 1.7 The basics of Erlang programming
 
 
+You can declare a module with `-module(<modulename>).`
 
-LEFT_OFF_AT : https://www.futurelearn.com/courses/functional-programming-erlang/1/steps/148015
+You can export function with `-export([<somefunction/arity>])`
+
+You can compile a module in the Erlang shell with `c(<modulename>)`
+
+You can declare a function like this:
+
+```
+somefunc(X) ->
+  X * X.
+```
 
 
+# 1.8 Introducing more complicated functions
 
+```
+area(A,B,C) ->
+  S = (A+B+C)/2,
+  math:sqrt(S*(S-A)*(S-B)*(S-C)).
+```
 
-
-
-
-
+A function is a sequence of expressions, and the return value is the value of the last expression.
 
