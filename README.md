@@ -75,3 +75,41 @@ area(A,B,C) ->
 
 A function is a sequence of expressions, and the return value is the value of the last expression.
 
+
+# 1.9 Erlang data: numbers and atoms
+
+The following data types are available in Erlang:
+
+- Numbers
+
+- Atoms
+
+- Booleans
+
+- Tuples & Lists
+
+- Strings
+
+- Functions
+
+Erlang is weakly typed, although you can use some tools like dializer to enforce some checks.
+
+
+An atom is a piece of data that simply stands for it self.
+
+These are examples of atoms:
+
+```
+foo.
+
+'i am an atom'.
+
+foo == foo.
+
+true.
+false.
+```
+
+E.g. atoms are useful for pattern matching, they can be used for equality, ordering, etc.
+
+Interestingly, `true` and `false` are atoms!
