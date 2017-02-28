@@ -200,3 +200,51 @@ xOr(false, true) ->
 xOr(X, Y) ->
   false.
 ```
+
+### 1.18 Recursion on Integers
+
+Factorial as an example:
+
+```
+fac (0) ->
+  1;
+fac (N) ->
+  fac(N-1) * N.
+```
+
+Interestingly, it reads like the actual mathematical definition:
+
+> The factorial of 0 *is* 1
+> The factorial of N *is* the product of the factorial of N-1 and N.
+
+But what if the provided number is less than zero? The recursion would not end.
+
+Guards!
+
+```
+fac (0) ->
+  1;
+fac (N) when N > 0 ->
+  fac(N-1) * N.
+```
+
+A guard can contain arithmetic operations and comparisons. And they can be combined with `,`.
+
+*But* you *can't* put user-defined functions as a guard. -> Use `case` expression.
+
+
+### 1.21 Tail recursion
+
+You can accumulate the partial result, by adding a second parameter to the `fib` function, like this:
+
+```
+fac (N) ->
+  fac(N,1).
+
+fac (0,Accumulator) ->
+  P;
+fac (N,Accumulator) ->
+  fac(N-1, Accumulator * N).
+```
+
+This is a common pattern in `reducing` data in Erlang.
